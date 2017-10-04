@@ -1,0 +1,3 @@
+We did not use any tool except for message for this phase. Instead, we made several meetings in person, which is about twice a week, to discuss about our project. To make the decision, someone comes up with an idea and we discuss it together to determine if it is pratical or not. And our TA gave us some advice about our purposal as well. We did some research on the Internet to check if there is already an existing same project or something similar. The project we found on line has inspired us to come up with more ideas.
+
+For the next phase, we should have more communication besides the meeting via computer or cellphone. Because we always find it clueless when we forced ourselves to figure out one. 

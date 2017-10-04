@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+<p>
+  <strong>Title:</strong>
+  <%= @micropost.title %>
+</p>
+
+
+<p>
+<strong>Content:</strong>
+    <%= @micropost.content %>
+    <%= image_tag @micropost.picture.url if @micropost.picture? %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= link_to @post_user_name, '/users/'+@post_user_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @micropost.status %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @micropost.location %>
+</p>
+
+<p>
+  <strong>Foodtype:</strong>
+  <%= @micropost.foodtype %>
+</p>
+<p>
+  <strong>Reserved Users:</strong>
+  <% @users.each do |user| %>
+    <%= link_to(user.name,"/users/"+user.id.to_s)%>
+  <% end %>
+</p>
+
+<%= link_to(@reserve,'/microposts?status='+@micropost.id.to_s)%>
+<%= link_to @cancel, "/microposts/"+@micropost.id.to_s + "?cancel=1" %>
+<%= link_to @label, {:controller =>'microposts',:action => 'destroy', method: :post, param1: @micropost.id} %>
+<%= link_to @Edit, edit_micropost_path(@micropost) %>
+<%= link_to 'Back', microposts_path %>

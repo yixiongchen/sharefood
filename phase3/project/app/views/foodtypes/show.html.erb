@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Region:</strong>
+  <%= @foodtype.region %>
+</p>
+
+<p>
+  <strong>Cuisine:</strong>
+  <%= @foodtype.cuisine %>
+</p>
+
+<%= link_to 'Edit', edit_foodtype_path(@foodtype) %> |
+<%= link_to 'Back', foodtypes_path %>

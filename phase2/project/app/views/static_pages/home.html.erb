@@ -1,0 +1,43 @@
+		<% provide(:title, 'Home') %>
+
+<div class="center jumbotron">
+  <h1>Welcome to the Howling Abyss</h1>
+
+  <h2>
+    Share Food, Share Hapiness
+  </h2>
+
+  <%= link_to("Sign up now",{:controller =>'users',:action => 'new'},class: "btn btn-lg btn-primary")%>
+  or
+  <%= link_to("Take a look!",{:controller =>'microposts',:action => 'index'},class: "btn btn-lg btn-primary")%>
+ 
+</div>
+
+
+
+
+
+
+<head>
+  <style type="text/css">
+    body { height: 100%; margin: 0; padding: 0; }
+    #map { height: 100%; }
+  </style>
+</head>
+  
+<body>
+  
+  <div id="map" style="height:350px;"></div>
+
+  
+  
+  <script 
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfFrD8vc7EDYVGFD1YZ4rJGfo8X4A2vxw">
+  </script>
+  <script>
+    initMap();
+    drawMap(<%= raw @location.to_json %>, <%= raw @user_name.to_json %>, <%= raw @user_id.to_json %>, <%= raw @content.to_json %>, <%= raw @foodtype.to_json %>);
+  </script>
+
+
+</body>

@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  content: MyString
+  user_id: 1
+  status: 1
+  location: MyString
+  foodtype: MyString
+  picture: MyString
+  list_of_user_id: MyString
+
+two:
+  content: MyString
+  user_id: 1
+  status: 1
+  location: MyString
+  foodtype: MyString
+  picture: MyString
+  list_of_user_id: MyString

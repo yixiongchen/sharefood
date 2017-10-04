@@ -1,0 +1,45 @@
+<%= form_for(@canadianpost) do |f| %>
+  <% if @canadianpost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@canadianpost.errors.count, "error") %> prohibited this canadianpost from being saved:</h2>
+
+      <ul>
+      <% @canadianpost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.number_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.number_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :foodtype %><br>
+    <%= f.text_field :foodtype %>
+  </div>
+  <div class="field">
+    <%= f.label :picture %><br>
+    <%= f.text_field :picture %>
+  </div>
+  <div class="field">
+    <%= f.label :list_of_user_id %><br>
+    <%= f.text_field :list_of_user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

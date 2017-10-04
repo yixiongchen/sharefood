@@ -1,0 +1,14 @@
+	<% provide(:title, 'SHARE') %>
+
+<div class="center jumbotron">
+  <h1>Welcome</h1>
+
+  <h2>
+    Make your choice!
+  </h2>
+
+  <%= link_to("Share food with others",{:controller =>'microposts',:action => 'new'},class: "btn btn-lg btn-primary")%>
+  or
+  <%= link_to("Search for Food",'/microposts/new',class: "btn btn-lg btn-primary")%>
+
+</div>

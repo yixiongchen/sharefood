@@ -1,0 +1,17 @@
+<%= form_for(@vegetarian) do |f| %>
+  <% if @vegetarian.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@vegetarian.errors.count, "error") %> prohibited this vegetarian from being saved:</h2>
+
+      <ul>
+      <% @vegetarian.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

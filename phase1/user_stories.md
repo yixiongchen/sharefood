@@ -1,0 +1,11 @@
+Stories:
+
+1. Bob is an university student in computer science who is taking several tough courses this semester. He usually goes to school in the morning and he can't go back home until 7 p.m in the evening. He is too busy to cook by himself since he has to program after school. Recently, he finds himself becomes fatter and fatter because he often eats fast food every night. Instead of eating fast food, he wants to have a healthy dinner. By using our application, Bob could find someone who is willing to cook for him by paying some fee.
+
+2. William is 70-year old man who was a cooker before he retired. He thought cooking is his favourite job ever since he was a child. He still wants to cook for others after he retired. By using our application, William attracts a lot of young people near by to come for a meal by paying a little fee. Seeing the young like his cuisine, he smiles sweetly.
+ 
+3. Jenny is a struggling single-mother of two children. She has to take two full-time job to afford the cost of her children. She usually goer back home at 10 p.m between Monday to Friday. She hopes someone who love children can cook for her kids and spend some time with them. By using our application, she can find someone in her community who has time and love children. And this guy can spend evening-time with her kids.
+
+4. Lily is a 65-year old madam living by herself whose kids are working in other provinces. She often goes shopping and reads a book in the morning. She really love kids and dogs. By using our application, she can find some people who has no time to cook for their children. Then she could cook more and call some kids to have dinner with her.
+
+5. Henry is a 14-year old international student coming from America. He has never cooked by him before he came to Canada. Henry loves playing basketball and he lives by himself now. He's staying in growing so his parents want him to eat more nutrition food. Although Henry could have lunch at school-cafeteria, but he has to have fast food for dinner. After using our application, Henry connects with Smith family with 4 children and they often cook more than they need. Then Henry has dinner with them ever evening and Henry's mother pays this family 200 dollars a month. Henry think Smith family is like his home in Canada.

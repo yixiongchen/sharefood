@@ -1,0 +1,2 @@
+module CanadianpostsHelper
+end

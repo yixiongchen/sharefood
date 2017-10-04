@@ -1,0 +1,2 @@
+module VegetariansHelper
+end

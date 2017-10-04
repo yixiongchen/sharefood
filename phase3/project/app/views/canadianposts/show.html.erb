@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @canadianpost.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @canadianpost.user_id %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @canadianpost.status %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @canadianpost.location %>
+</p>
+
+<p>
+  <strong>Foodtype:</strong>
+  <%= @canadianpost.foodtype %>
+</p>
+
+<p>
+  <strong>Picture:</strong>
+  <%= @canadianpost.picture %>
+</p>
+
+<p>
+  <strong>List of user:</strong>
+  <%= @canadianpost.list_of_user_id %>
+</p>
+
+<%= link_to 'Edit', edit_canadianpost_path(@canadianpost) %> |
+<%= link_to 'Back', canadianposts_path %>

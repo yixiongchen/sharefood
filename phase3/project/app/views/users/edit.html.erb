@@ -1,0 +1,10 @@
+<h1>Editing User</h1>
+
+<%= render 'form' %>
+<span class="content">
+    <%= image_tag @user.picture.url if @user.picture? %>
+  </span>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>
+

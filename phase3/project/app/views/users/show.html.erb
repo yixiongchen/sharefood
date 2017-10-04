@@ -1,0 +1,36 @@
+	<% provide(:title, 'Show') %>
+<p id="notice"><%= notice %></p>
+
+<!--<div class="row">
+  <div class="col-md-20 col-md-offset-5">
+-->
+<p>
+<strong>Name:</strong>
+  <%= @user.name %>
+  <%= image_tag @user.picture.url if @user.picture? %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @user.location %>
+</p>
+
+<p>
+  <strong>Foodtype:</strong>
+  <%= @user.foodtype %>
+</p>
+<p>
+  <strong>You order postlist</strong>
+  <%= @user.list_of_micropost_id %>
+</p>
+<div>
+</div>
+
+<%= link_to 'Edit', edit_user_path(@user), class: "btn btn-lg btn-primary" %> |
+<%= link_to("New Post",'/microposts/new?id='+@user.id.to_s,class: "btn btn-lg btn-primary")%>
+

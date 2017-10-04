@@ -1,0 +1,40 @@
+<% provide(:title, 'Food Posts') %>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Microposts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Content</th>
+      <th>Status</th>
+      <th>Location</th>
+      <th>Foodtype</th>
+      <th>user_id</th>
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @microposts.each do |micropost| %>
+     <% if micropost.status > 0 %>
+      <tr>
+        <td><%= micropost.content %></td>
+        <td><%= micropost.status %></td>
+        <td><%= micropost.location %></td>
+        <td><%= micropost.foodtype %></td>
+        <td><%= micropost.user_id %></td>
+        <td><%= link_to("reserve",'/microposts?status='+micropost.id.to_s)%>
+        </td>
+      
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Canadian', Canadianpost %> 
+<%= link_to 'Chinese', Chinese %> 
+

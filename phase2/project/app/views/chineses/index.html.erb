@@ -1,0 +1,75 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Chineses</h1>
+
+<table>
+  <thead>
+     <tr>
+      <th>Content</th>
+      <th>Status</th>
+      <th>Location</th>
+      <th>Foodtype</th>
+      <th>user_id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @microposts.each do |micropost| %>
+     <% if micropost.foodtype == 'Chinese' and micropost.status > 0 %>
+      <tr>
+        <td><%= micropost.content %></td>
+        <td><%= micropost.status %></td>
+        <td><%= micropost.location %></td>
+        <td><%= micropost.foodtype %></td>
+        <td><%= micropost.user_id %></td>
+        <% @user_list_of_micropost_id.each do |postid| %>
+          <% if micropost.id ==postid && @user_post_id != 0 && micropost.user_id != @user_post_id%>
+            <td><%= link_to("Check Your Reservation",'/microposts/'+micropost.id.to_s)%></td>
+          <% end %>
+        <% end %>
+        
+         <% @reserve_id.each do |postid| %>
+          <% if micropost.id == postid && @user_post_id != 0 && micropost.user_id != @user_post_id%>
+            <td><%= link_to("Reserve Now!",'/microposts?status='+micropost.id.to_s)%></td>
+          <% end %>
+        <% end %>
+        
+        
+        <% if micropost.user_id == @user_post_id %>
+         <td><%= link_to("Check Your Post",'/microposts/'+micropost.id.to_s)%>
+        </td>
+        <% end %>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'back', Micropost %>
+
+<<<<<<< HEAD
+=======
+<head>
+  <style type="text/css">
+    body { height: 100%; margin: 0; padding: 0; }
+    #map { height: 100%; }
+  </style>
+</head>
+  
+<body>
+  
+  <div id="map" style="height:350px;"></div>
+
+  
+  
+
+  <script>
+    initMap();
+    drawMap(<%= raw @location.to_json %>, <%= raw @user_name.to_json %>, <%= raw @user_id.to_json %>, <%= raw @content.to_json %>, <%= raw @foodtype.to_json %>);
+  </script>
+
+
+</body>
+>>>>>>> upstream/master

@@ -1,0 +1,89 @@
+<% provide(:title, 'Food Posts') %>
+<p id="notice"><%= notice %></p>
+<h1>&nbsp</h1>
+
+<h1>Listing Microposts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>&nbsp&nbsp&nbspStatus</th>
+      <th>&nbsp&nbsp&nbspLocation</th>
+      <th>&nbsp&nbsp&nbspFoodtype</th>
+
+      <th colspan="5"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @microposts.each do |micropost| %>
+     <% if micropost.status > 0 %>
+      <tr>
+        <td><%= link_to micropost.title, '/microposts/'+micropost.id.to_s %> </td>
+        <td>&nbsp&nbsp&nbsp<%= micropost.status %></td>
+        <td>&nbsp&nbsp&nbsp<%= micropost.location %></td>
+        <td>&nbsp&nbsp&nbsp<%= micropost.foodtype %>&nbsp&nbsp&nbsp</td>
+        <% @user_list_of_micropost_id.each do |postid| %>
+          <% if micropost.id ==postid && @user_post_id != 0 && micropost.user_id != @user_post_id%>
+            <td><%= link_to("Check Your Reservation",'/microposts/'+micropost.id.to_s)%></td>
+          <% end %>
+        <% end %>
+        
+         <% @reserve_id.each do |postid| %>
+          <% if micropost.id == postid && @user_post_id != 0 && micropost.user_id != @user_post_id%>
+            <td><%= link_to("Reserve Now!",'/microposts?status='+micropost.id.to_s)%></td>
+          <% end %>
+        <% end %>
+        
+        
+        <% if micropost.user_id == @user_post_id %>
+         <td><%= link_to("Check Your Post",'/microposts/'+micropost.id.to_s)%>
+        </td>
+        <% end %>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<h5>&nbsp</h5>
+<h5>Choose Your Favourite Food Type</h5>
+
+<%= link_to 'Canadian', Canadianpost %> 
+<%= link_to 'Chinese', Chinese %> 
+<%= link_to 'French', French %> 
+<%= link_to 'Japanese', Japanese %> 
+<%= link_to 'Mexican', Mexican %> 
+<%= link_to '*Vegetarian', Vegetarian %> 
+
+
+<head>
+  <style type="text/css">
+    body { height: 100%; margin: 0; padding: 0; }
+    #map { height: 100%; }
+  </style>
+</head>
+  
+<body>
+  
+  <div id="map" style="height:350px;"></div>
+
+  
+  
+
+  <script>
+    initMap();
+    drawMap(<%= raw @location.to_json %>, <%= raw @user_names.to_json %>, <%= raw @user_ids.to_json %>, <%= raw @content.to_json %>, <%= raw @foodtype.to_json %>);
+  </script>
+
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<%= link_to 'Canadian', Canadianpost %> 
+<%= link_to 'Chinese', Chinese %> 
+=======
+>>>>>>> 43c322d35c3d2a31cd86831171f3c3abd0496e7d
+>>>>>>> upstream/master
+
+</body>

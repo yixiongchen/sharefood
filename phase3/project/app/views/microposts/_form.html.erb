@@ -1,0 +1,60 @@
+<%= form_for(@micropost, html: { multipart: true }) do |f| %>
+  <% if @micropost.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@micropost.errors.count, "error") %> prohibited this micropost from being saved:</h2>
+
+      <ul>
+      <% @micropost.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :location %><br>
+    <%= f.text_area :location %>
+  </div>
+  <div class="field">
+    <%= f.label :foodtype %><br>
+
+    <%= link_to 'Canadian',"/microposts/new?foodtype=Canadian" %>
+    <%= link_to 'Chinese',"/microposts/new?foodtype=Chinese" %>
+    <%= link_to 'French',"/microposts/new?foodtype=French" %>
+    <%= link_to 'Japanese',"/microposts/new?foodtype=Japanese" %>
+    <%= link_to 'Mexican',"/microposts/new?foodtype=Mexican" %>
+    <%= link_to '*Vegetarian',"/microposts/new?foodtype=*Vegetarian" %> 
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_area :status %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_area :user_id,:value => @user.id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+   <span class="picture">
+    <%= f.label :phote_of_food %><br>
+    <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+  </span>
+ 
+<% end %>
+
+<script type="text/javascript">
+  $('#micropost_picture').bind('change', function() {
+    var size_in_megabytes = this.files[0].size/1024/1024;
+    if (size_in_megabytes > 5) {
+      alert('Maximum file size is 5MB. Please choose a smaller file.');
+    }
+  });
+</script>

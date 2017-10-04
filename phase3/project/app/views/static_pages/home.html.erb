@@ -1,0 +1,71 @@
+		<% provide(:title, 'Home') %>
+
+<div class="center jumbotron">
+  <h1>Welcome to the ShareFood</h1>
+
+  <h2>
+    Share Food, Share Hapiness
+  </h2>
+
+  <%= link_to("Sign up now",{:controller =>'users',:action => 'new'},class: "btn btn-lg btn-primary")%>
+  or
+  <%= link_to("Take a look!",{:controller =>'microposts',:action => 'index'},class: "btn btn-lg btn-primary")%>
+ 
+</div>
+
+
+
+
+
+
+<head>
+  <style type="text/css">
+    body { height: 100%; margin: 0; padding: 0; }
+    #map { height: 100%; }
+  </style>
+</head>
+  
+<body>
+  <div id="map" style="height:350px;"></div>
+  <script type="text/javascript">
+
+var map;
+function initMap() {
+map = new google.maps.Map(document.getElementById('map'), {
+  center: {lat: 43.700, lng: -79.400},
+  zoom: 13
+});
+var infoWindow = new google.maps.InfoWindow({map: map});
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function(position) {
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
+    });
+  } else {
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
+  }
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+}
+
+  </script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCfFrD8vc7EDYVGFD1YZ4rJGfo8X4A2vxw&callback=initMap">
+  </script>
+</body>
